@@ -1,63 +1,43 @@
-var path = require("path");
+//Load Data
+var friendMatch = require('../data/friends.js');
 
-// LOAD DATA
-var friendsData = require("../data/friends.js");
-
-// ROUTING
-module.exports = function(app) {
-  
-  // API GET Requests
-  app.get("/api/friends", function(req, res) {
-    res.json(friendsData);
+module.exports = function(app){
+  //a GET route that displays JSON of all possible friends
+  app.get('/api/friends', function(req,res){
+    res.json(friendMatch);
   });
 
-  // API POST Requests and Friend Finding Logic
-  app.post("/api/friends", function(req, res) { 
+  app.post('/api/friends', function(req,res){
+    //capture the user's scores to compare with people in the fakeFriends array
+    var userScores = req.body.results;
+    var resultsArray = [];
+    var matchCount = 0;
+    var compMatch = 0;
 
-    // ADD A VALIDATION HERE IN THE FUTURE...
-    // For cases when a duplicate is trying to be made.
-    
-    // Most related friend placeholder
-    var friendFound = [50, 0];
-    
-    // cycles through each friend and compares it to the user input object
-    for(var j = 0; j < friendsData.length; j++) {
-        
-        // higher number is worse link to friendship
-        var unlikelyPoints = 0;
-        
-        // Calculates how many points the user has against the friend they're being compared to
-        for(var k = 0; k < req.body.results.length; k++) {
-            unlikelyPoints += Math.abs(parseFloat(friendsData[j].results[k]) - parseFloat(req.body.results[k])); // 
-        }
-        
-        // If equal matches, pick a random one to keep
-          //  Unfortunatly this method will eventually lose the friends from the top
-          //  due to too many chances being 'rolled', especially if this program is used by 
-          //  millions of people with many having the same question answers.
-          //  Replace in the future. Ok on small scale. 
-        if(unlikelyPoints <= friendFound[0]) {
-            if(unlikelyPoints === friendFound[0]) {
-              if(Math.random() < 0.5) {
-                friendFound[0] = unlikelyPoints;
-                friendFound[1] = j;
-              }
-            } else {
-              friendFound[0] = unlikelyPoints;
-              friendFound[1] = j;
-            }
-        }
-        
-        // TEST allows user to see point differences for each friend via server-side console
-        console.log(friendsData[j].name + "'s unlikely points: " + unlikelyPoints);
+    //goes through all current people on the fakeFriends array
+    for(var i=0; i<friendMatch.length; i++){
+      var matchSep = 0;
+      //run through results and finds the separation score by comparing against fakeFriends
+      for(var j=0; j<userScores.length; j++){
+        matchSep += (Math.abs(parseInt(friendMatch[i].results[j]) - parseInt(userScores[j])));
+      }
+
+      //push results into resultsArray
+      resultsArray.push(matchSep);
     }
 
-    // TEST just separating the different logs and displaying winning match
-    console.log("\n" + friendsData[friendFound[1]].name + "\n");
+    //Calculate the closest match to the people in the fakeFriends array
+    for(var i=0; i<resultsArray.length; i++){
+      if(resultsArray[i] <= resultsArray[compMatch]){
+        compMatch = i;
+      }
+    }
 
-    // Adding to friends list and returning the most likely friend match object
-    friendsData.push(req.body);
-    res.json(friendsData[friendFound[1]]);
+    //return compMatch data
+    var bff = friendMatch[compMatch];
+    res.json(bff);
+
+    //pushes new answers to the fakeFriends array
+    friendMatch.push(req.body);
   });
-
 };

@@ -5,17 +5,35 @@
     <meta charset="UTF-8">
     <title>FriendFinder</title>
 
-    <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-        crossorigin="anonymous">
-
+    <!--CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Font Awesome Glyphicons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <!-- Chosen -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
+    <!-- Keeps images within modal width, input areas and submit button at desired width -->
+    <style>
+        img {
+            width: 568px;
+        }
+        .form-control{
+            width: 50%;
+        }
+        .btn-block {
+            width: 50%;
+        }
+
+        body {
+            background-image: url("https://brand.cfaes.ohio-state.edu/sites/brand/files/imce/art/backgrounds/osu/buckeye_leaf_diamond_graywhite.jpg");
+            
+        }
+    </style>
 
 </head>
 
@@ -23,7 +41,7 @@
 
     <div class="container">
 
-        <h2>Survey Questions</h2>
+        <h1><strong>Survey Questions</strong></h1>
         <hr>
 
         <h3>
@@ -38,9 +56,11 @@
         <hr>
 
         <h3>
-            <strong>Question 1</strong>
+            <u>
+                <strong>Question 1</strong>
+            </u>
         </h3>
-        <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+        <h4>Ice Cream is the BEST.</h4>
         <select class="chosen-select" id="q1">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -51,9 +71,11 @@
         </select>
 
         <h3>
-            <strong>Question 2</strong>
+            <u>
+                <strong>Question 2</strong>
+            </u>
         </h3>
-        <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+        <h4>Cats are people too.</h4>
         <select class="chosen-select" id="q2">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -65,9 +87,11 @@
 
 
         <h3>
-            <strong>Question 3</strong>
+            <u>
+                <strong>Question 3</strong>
+            </u>
         </h3>
-        <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+        <h4>You're a morning person.</h4>
         <select class="chosen-select" id="q3">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -79,9 +103,11 @@
 
 
         <h3>
-            <strong>Question 4</strong>
+            <u>
+                <strong>Question 4</strong>
+            </u>
         </h3>
-        <h4>You rarely do something just out of sheer curiosity.</h4>
+        <h4>The eyes are the window to the soul.</h4>
         <select class="chosen-select" id="q4">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -93,9 +119,11 @@
 
 
         <h3>
-            <strong>Question 5</strong>
+            <u>
+                <strong>Question 5</strong>
+            </u>
         </h3>
-        <h4>People can rarely upset you.</h4>
+        <h4>The Earth is flat.</h4>
         <select class="chosen-select" id="q5">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -107,9 +135,11 @@
 
 
         <h3>
-            <strong>Question 6</strong>
+            <u>
+                <strong>Question 6</strong>
+            </u>
         </h3>
-        <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+        <h4>Other people's feelings matter.</h4>
         <select class="chosen-select" id="q6">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -121,9 +151,11 @@
 
 
         <h3>
-            <strong>Question 7</strong>
+            <u>
+                <strong>Question 7</strong>
+            </u>
         </h3>
-        <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+        <h4>LeBron should have stayed in Cleveland.</h4>
         <select class="chosen-select" id="q7">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -134,9 +166,11 @@
         </select>
 
         <h3>
-            <strong>Question 8</strong>
+            <u>
+                <strong>Question 8</strong>
+            </u>
         </h3>
-        <h4>You rarely get carried away by fantasies and ideas.</h4>
+        <h4>Trix are for kids.</h4>
         <select class="chosen-select" id="q8">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -147,9 +181,11 @@
         </select>
 
         <h3>
-            <strong>Question 9</strong>
+            <u>
+                <strong>Question 9</strong>
+            </u>
         </h3>
-        <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+        <h4>Taxes are fun.</h4>
         <select class="chosen-select" id="q9">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -160,9 +196,11 @@
         </select>
 
         <h3>
-            <strong>Question 10</strong>
+            <u>
+                <strong>Question 10</strong>
+            </u>
         </h3>
-        <h4>You feel more energetic after spending time with a group of people.</h4>
+        <h4>It is a great time to be alive.</h4>
         <select class="chosen-select" id="q10">
             <option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -171,14 +209,12 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-
         <br>
         <br>
 
-        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
-            <i class="fa fa-check-circle" aria-hidden="true"></i>
-            Submit</button>
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            Let's find some friends!</button>
 
         <hr>
         <footer class="footer">
@@ -193,58 +229,33 @@
     </div>
 
     <!-- Modal -->
-    <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal fade" id="revealModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
 
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h2 class="modal-title">
-                        <strong>Best Match</strong>
-                    </h2>
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <strong>Meet Your Closest Match!</strong>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img" src="https://eyeondesign.aiga.org/wp-content/uploads/2017/03/Tinder-its-a-match-typography-aiga.png"
-                        alt="">
+                    <h2 id="friendName"></h2>
+                    <img id="friendPhoto" src="https://eyeondesign.aiga.org/wp-content/uploads/2017/03/Tinder-its-a-match-typography-aiga.png"
+                        alt="" ;>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-
         </div>
     </div>
 
-
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-
     <script type="text/javascript">
-        // Chosen CSS
-        var config = {
-            ".chosen-select": {},
-            ".chosen-select-deselect": {
-                allow_single_deselect: true
-            },
-            ".chosen-select-no-single": {
-                disable_search_threshold: 10
-            },
-            ".chosen-select-no-results": {
-                no_results_text: "Oops, nothing found!"
-            },
-            ".chosen-select-width": {
-                width: "95%"
-            }
-        };
 
-        for (var selector in config) {
-            $(selector).chosen(config[selector]);
-        }
-
-        // Capture the form inputs
+        // Capture user inputs
         $("#submit").on("click", function (event) {
             event.preventDefault();
 
@@ -266,9 +277,9 @@
                 return isValid;
             }
 
-            // If all required fields are filled
+            // If all required fields are completed
             if (validateForm()) {
-                // Create an object for the user"s data
+                // Create an object with the answers provided
                 var userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
@@ -289,19 +300,16 @@
                 // AJAX post the data to the friends API.
                 $.post("/api/friends", userData, function (data) {
 
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#match-name").text(data.name);
-                    $("#match-img").attr("src", data.photo);
+                    // Grab the result from the AJAX post so that the friend's name and photo are displayed.
+                    $("#friendName").text(data.name);
+                    $("#friendPhoto").attr("src", data.photo);
 
-                    // TEST logging best matched user to user-side console
-                    console.log(data.name);
-
-                    // Show the modal with the best match
-                    $("#results-modal").modal("toggle");
+                    // Show the modal  for the friend you're most compatible with
+                    $("#revealModal").modal("toggle");
 
                 });
             } else {
-                alert("Please fill out all fields before clicking submit!");
+                alert("Please answer all questions before submitting! Your friends need to know more about you!");
             }
         });
     </script>
